@@ -17,6 +17,10 @@
 
         $order->setXmlOrders($xmlOrders);
         $order->convert($currencyExchangeRatesGBP,$currencyExchangeRatesEUR);
+        
+        //Print and save the new XML file
+        $order->printXML();
+        $order->saveXML();
 
     } else { 
         print "There's no exchange rates."; 

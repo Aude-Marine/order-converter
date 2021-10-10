@@ -12,8 +12,17 @@ class Order {
         return $this->xmlOrders;
     }
 
+    public function printXML(){
+        header('Content-type: text/xml');
+        echo $this->xmlOrders->asXML();
+    }
+
+    public function saveXML(){
+        $this->xmlOrders->asXML();
+    }
+
     public function convert($currencyExchangeRatesGBP,$currencyExchangeRatesEUR) {
-        
+
         $xmlOrders = $this->xmlOrders;
 
         if(isset($xmlOrders) && !empty($xmlOrders) && isset($xmlOrders->order) && !empty($xmlOrders->order)) {
