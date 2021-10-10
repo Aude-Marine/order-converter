@@ -3,6 +3,7 @@
 class Order {
 
     private $xmlOrders;
+    private $filename = "Converted orders.xml";
 
     public function setXmlOrders($xmlOrders) {
         $this->xmlOrders = $xmlOrders;
@@ -18,7 +19,7 @@ class Order {
     }
 
     public function saveXML(){
-        $this->xmlOrders->asXML();
+        $this->xmlOrders->asXML($this->filename);
     }
 
     public function convert($currencyExchangeRatesGBP,$currencyExchangeRatesEUR) {
