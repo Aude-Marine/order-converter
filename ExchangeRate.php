@@ -1,6 +1,7 @@
 <?php
 
 class ExchangeRate {
+
     private $currencyArray;
 
     public function addCurrencyArray($currencyArray) {
@@ -19,7 +20,7 @@ class ExchangeRate {
     }
 
     public function loadCurrency($xmlExchangeRates) {
-        foreach($xmlExchangeRates->currency as $currency){
+        foreach($xmlExchangeRates->currency as $currency) {
             $currencyArray = null;
             foreach($currency->rateHistory->rates as $rates) {
                 $currencyRateValue = "";
